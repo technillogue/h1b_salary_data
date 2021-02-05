@@ -25,7 +25,7 @@ def get_data(city: str = "BOSTON") -> pd.DataFrame:
 
 
 def plot(salaries: pd.DataFrame) -> None:
-    boxplot = seaborn.boxplot(x="year", y="salary", data=salaries)
+    boxplot = seaborn.boxplot(x="year", y="salary", data=salaries).set_title("H1B software engineer base salaries in Boston")
     boxplot.get_figure().savefig("boxplot.png")
     last_year = salaries[salaries["year"] == 2020]
     displot = seaborn.displot(last_year, x="salary", kind="kde")
